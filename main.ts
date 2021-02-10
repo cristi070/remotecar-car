@@ -3,9 +3,17 @@ radio.onReceivedString(function (receivedString) {
     	
     } else if (receivedString == "Close") {
     	
-    } else if (receivedString == "LEDL") {
+    } else if (receivedString == "LED_GREEN") {
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.GREEN)
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.GREEN)
+    } else if (receivedString == "LED_YELLOW") {
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.YELLOW)
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.YELLOW)
+    } else if (receivedString == "LED_RED") {
         DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.RED)
-    } else if (receivedString == "LEDR") {
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.RED)
+    } else if (receivedString == "LED_BLUE") {
+        DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.BLUE)
         DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.BLUE)
     } else if (receivedString == "F") {
         DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 100)
