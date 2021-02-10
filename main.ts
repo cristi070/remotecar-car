@@ -1,5 +1,5 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    speed = receivedNumber * SpeedMultiplier
+    speed = MinSpeed + (receivedNumber-1) * SpeedMultiplier
     basic.showNumber(receivedNumber)
 })
 radio.onReceivedString(function (receivedString) {
@@ -20,18 +20,19 @@ radio.onReceivedString(function (receivedString) {
     } else if (receivedString == "B") {
         DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CCW, speed)
     } else if (receivedString == "L") {
-        DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CCW, speed/2)
-        DFRobotMaqueenPlus.mototRun(Motors.M2, Dir.CW, speed/2)
+        DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CCW, speed)
+        DFRobotMaqueenPlus.mototRun(Motors.M2, Dir.CW, speed)
     } else if (receivedString == "R") {
-        DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CW, speed/2)
-        DFRobotMaqueenPlus.mototRun(Motors.M2, Dir.CCW, speed/2)
+        DFRobotMaqueenPlus.mototRun(Motors.M1, Dir.CW, speed)
+        DFRobotMaqueenPlus.mototRun(Motors.M2, Dir.CCW, speed)
     } else {
         DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.OFF)
         DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBR, Color.OFF)
         DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 0)
     }
 })
-let SpeedMultiplier = 20
-let speed = SpeedMultiplier
+let MinSpeed = 40
+let SpeedMultiplier = 15
+let speed = MinSpeed
 radio.setGroup(1)
 basic.showNumber(1)
