@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "MaqueenPlus": "github:dfrobot/pxt-dfrobot-maqueenplus#v1.4.2"
     },
     "files": [
         "main.blocks",
@@ -17,5 +18,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
